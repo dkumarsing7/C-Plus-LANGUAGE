@@ -89,7 +89,7 @@ int main(){
     for(int ele : union_set) cout<<ele<< " ";cout<<endl;
 
     // Descending Order
-    // Store elements in a set and print them in descending order using a custom comparator.
+    // Store elements in a set and print them in descending order using a custom comparator..
     
 }
 
