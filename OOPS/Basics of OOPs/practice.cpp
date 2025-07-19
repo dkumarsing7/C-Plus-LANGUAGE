@@ -2,16 +2,18 @@
 using namespace std;
 
 class Teacher{
-    public: 
-        Teacher (int x){
-            number = x;
-            cout<<number;
-        }
-    int number;
+public: 
+    string name;
+    Teacher (string name){
+        this->name = name;
+    }
+    void info(){
+        cout<< "my name is : " << name << endl;
+    }
 
 };
 int main(){
-    Teacher t(2);
-    Teacher te(2);
+    Teacher t("depeak");
+    t.info();
 
 }
