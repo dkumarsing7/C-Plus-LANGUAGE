@@ -86,12 +86,27 @@ int main(){
     set_union(first.begin(), first.end(),
                    second.begin(), second.end(),
                    std::inserter(union_set, union_set.begin()));
-    for(int ele : union_set) cout<<ele<< " ";cout<<endl;
+    for(int ele : union_set) cout<<ele<< " ";
+    cout<<endl;
 
     // Descending Order
     // Store elements in a set and print them in descending order using a custom comparator..
-    
-}
+
+    struct customComparator{
+        bool operator()(const int& a, const int& b) const {return a>b;}
+    };
+    set<int, customComparator> desc;
+    desc.insert(10);
+    desc.insert(20);
+    desc.insert(60);
+    desc.insert(40);
+    desc.insert(80);
+    desc.insert(10);
+
+    cout << endl << "element in descending order : ";    
+    for(auto ele : desc) cout << ele << ' '; 
+    cout << endl;    
+}   
 
 
 
