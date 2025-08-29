@@ -98,6 +98,32 @@ class List{
       }
       cout<<"NULL"<<endl;
     }
+
+    int Search(int key){
+      Node* temp = head;
+      int idx = 0;
+      while(temp->next != NULL){
+        if(temp->data == key) return idx;
+        
+        temp = temp->next;
+        idx++;
+      }
+      return -1;
+    }
+
+    void Reverse(){
+      Node* pre = NULL;
+      Node* curr = head;
+      Node* next = NULL;
+      while(curr != NULL){
+        next = curr->next;
+        curr->next = pre;
+        pre = curr;
+        curr = next;
+      }
+      head = pre;
+      printLL();
+    }
 };
 
 int main(){
@@ -106,13 +132,8 @@ int main(){
   li.push_back(1);
   li.push_back(2);
   li.push_back(3);
-  // li.printLL();
-  // li.pop_front();
-  // li.printLL();
-  // li.pop_back();
-  li.insert(10, 0);
-  li.insert(10, 2);
-  li.insert(10, 5);
-  li.insert(10, 8);
+  li.push_back(4);
+  li.push_back(5);
   li.printLL();
+  li.Reverse();
 }
